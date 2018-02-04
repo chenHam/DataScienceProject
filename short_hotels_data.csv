@@ -1,0 +1,405 @@
+Snapshot ID,Snapshot Date,Checkin Date,Days,Original Price,Discount Price,Discount Code,Available Rooms,Hotel Name,Hotel Stars
+1,7/17/2015 00:00,8/12/2015 00:00,5,1178,1040,1,6,Best Western Plus Seaport Inn Downtown,3
+1,7/17/2015 00:00,8/19/2015 00:00,5,1113,982,1,8,Best Western Plus Seaport Inn Downtown,3
+1,7/17/2015 00:00,8/13/2015 00:00,5,4370,4240,1,3,The Peninsula New York,5
+1,7/17/2015 00:00,7/26/2015 00:00,5,1739,1667,1,18,Eventi Hotel a Kimpton Hotel,4
+1,7/17/2015 00:00,8/12/2015 00:00,5,1739,1672,1,3,Eventi Hotel a Kimpton Hotel,4
+1,7/17/2015 00:00,8/7/2015 00:00,5,1436,1345,1,9,Grand Hyatt New York,4
+1,7/17/2015 00:00,8/9/2015 00:00,5,1616,1525,1,5,Grand Hyatt New York,4
+1,7/17/2015 00:00,8/12/2015 00:00,5,1256,1183,1,5,Grand Hyatt New York,4
+1,7/17/2015 00:00,8/13/2015 00:00,5,1256,1201,1,54,Grand Hyatt New York,4
+1,7/17/2015 00:00,7/22/2015 00:00,5,1689,1489,1,-1,Hilton New York Fashion District,4
+1,7/17/2015 00:00,7/30/2015 00:00,5,2098,2003,1,-1,DoubleTree Suites by Hilton New York City - Times Square,4
+1,7/17/2015 00:00,7/31/2015 00:00,5,2120,2026,1,-1,DoubleTree Suites by Hilton New York City - Times Square,4
+1,7/17/2015 00:00,7/26/2015 00:00,5,1665,1595,1,-1,Hampton Inn Manhattan Soho,3
+1,7/17/2015 00:00,8/2/2015 00:00,5,1665,1595,1,-1,Hampton Inn Manhattan Soho,3
+1,7/17/2015 00:00,7/22/2015 00:00,5,3900,3750,1,8,Park Hyatt New York,5
+1,7/17/2015 00:00,7/23/2015 00:00,5,3900,3750,1,8,Park Hyatt New York,5
+1,7/17/2015 00:00,7/24/2015 00:00,5,3900,3750,1,9,Park Hyatt New York,5
+1,7/17/2015 00:00,7/25/2015 00:00,5,3900,3750,1,9,Park Hyatt New York,5
+1,7/17/2015 00:00,7/26/2015 00:00,5,3900,3750,1,9,Park Hyatt New York,5
+1,7/17/2015 00:00,7/27/2015 00:00,5,3900,3750,1,9,Park Hyatt New York,5
+1,7/17/2015 00:00,7/28/2015 00:00,5,3900,3750,1,9,Park Hyatt New York,5
+1,7/17/2015 00:00,8/3/2015 00:00,5,3763,3678,1,49,Park Hyatt New York,5
+1,7/17/2015 00:00,8/4/2015 00:00,5,3763,3678,1,49,Park Hyatt New York,5
+1,7/17/2015 00:00,8/5/2015 00:00,5,3763,3378,1,49,Park Hyatt New York,5
+1,7/17/2015 00:00,8/6/2015 00:00,5,3763,3678,1,-1,Park Hyatt New York,5
+1,7/17/2015 00:00,8/7/2015 00:00,5,3763,3588,1,-1,Park Hyatt New York,5
+1,7/17/2015 00:00,8/8/2015 00:00,5,3763,3588,1,-1,Park Hyatt New York,5
+1,7/17/2015 00:00,8/9/2015 00:00,5,3763,3588,1,-1,Park Hyatt New York,5
+1,7/17/2015 00:00,8/10/2015 00:00,5,3763,3678,1,-1,Park Hyatt New York,5
+1,7/17/2015 00:00,8/12/2015 00:00,5,3763,3378,1,39,Park Hyatt New York,5
+1,7/17/2015 00:00,8/13/2015 00:00,5,3763,3678,1,39,Park Hyatt New York,5
+1,7/17/2015 00:00,8/17/2015 00:00,5,3763,3678,1,50,Park Hyatt New York,5
+1,7/17/2015 00:00,7/24/2015 00:00,5,2176,2104,1,7,Andaz 5th Avenue - a concept by Hyatt,4
+1,7/17/2015 00:00,7/25/2015 00:00,5,2336,2273,1,7,Andaz 5th Avenue - a concept by Hyatt,4
+1,7/17/2015 00:00,8/2/2015 00:00,5,2503,2297,1,14,Andaz 5th Avenue - a concept by Hyatt,4
+1,7/17/2015 00:00,8/8/2015 00:00,5,2480,2272,1,15,Andaz 5th Avenue - a concept by Hyatt,4
+1,7/17/2015 00:00,8/9/2015 00:00,5,2503,2377,1,15,Andaz 5th Avenue - a concept by Hyatt,4
+1,7/17/2015 00:00,8/17/2015 00:00,5,2415,2285,1,-1,The Towers of the Waldorf Astoria New York,5
+1,7/17/2015 00:00,7/23/2015 00:00,5,2118,2057,1,11,W New York - Union Square,5
+1,7/17/2015 00:00,7/24/2015 00:00,5,2268,2211,1,11,W New York - Union Square,5
+1,7/17/2015 00:00,7/25/2015 00:00,5,2449,2392,1,11,W New York - Union Square,5
+1,7/17/2015 00:00,7/31/2015 00:00,5,2081,2025,1,13,W New York - Union Square,5
+1,7/17/2015 00:00,8/1/2015 00:00,5,2195,2138,1,13,W New York - Union Square,5
+1,7/17/2015 00:00,8/2/2015 00:00,5,2196,2144,1,13,W New York - Union Square,5
+1,7/17/2015 00:00,8/8/2015 00:00,5,2197,2145,1,13,W New York - Union Square,5
+1,7/17/2015 00:00,7/30/2015 00:00,5,1995,1795,1,28,Loews Regency New York Hotel,5
+1,7/17/2015 00:00,8/6/2015 00:00,5,1995,1795,1,41,Loews Regency New York Hotel,5
+1,7/17/2015 00:00,8/13/2015 00:00,5,1995,1795,1,48,Loews Regency New York Hotel,5
+1,7/17/2015 00:00,8/20/2015 00:00,5,1995,1795,1,49,Loews Regency New York Hotel,5
+26,7/27/2015 00:00,7/31/2015 00:00,5,3440,3340,2,35,The Peninsula New York,5
+26,7/27/2015 00:00,8/5/2015 00:00,5,1513,1231,2,11,Eventi Hotel a Kimpton Hotel,4
+26,7/27/2015 00:00,8/6/2015 00:00,5,1373,1277,2,21,Eventi Hotel a Kimpton Hotel,4
+26,7/27/2015 00:00,8/28/2015 00:00,5,2595,2405,2,1,The Mark,5
+26,7/27/2015 00:00,8/29/2015 00:00,5,2815,2625,2,1,The Mark,5
+26,7/27/2015 00:00,8/30/2015 00:00,5,3035,2845,2,1,The Mark,5
+26,7/27/2015 00:00,7/29/2015 00:00,5,1495,1395,2,67,Grand Hyatt New York,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1152,1066,2,4,World Center Hotel,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,1152,1058,2,-1,Hilton New York Fashion District,4
+26,7/27/2015 00:00,8/22/2015 00:00,5,1031,979,2,-1,Hilton New York Fashion District,4
+26,7/27/2015 00:00,8/13/2015 00:00,5,1825,1610,2,-1,DoubleTree Suites by Hilton New York City - Times Square,4
+26,7/27/2015 00:00,7/30/2015 00:00,5,1465,1385,2,-1,New York Marriott East Side,4
+26,7/27/2015 00:00,7/28/2015 00:00,5,1745,1485,2,-1,Hampton Inn Manhattan Soho,3
+26,7/27/2015 00:00,7/31/2015 00:00,5,1715,1415,2,-1,Hampton Inn Manhattan Soho,3
+26,7/27/2015 00:00,8/1/2015 00:00,5,1765,1605,2,-1,Hampton Inn Manhattan Soho,3
+26,7/27/2015 00:00,8/23/2015 00:00,5,1695,1615,2,-1,Hampton Inn Manhattan Soho,3
+26,7/27/2015 00:00,8/26/2015 00:00,5,1715,1475,2,-1,Hampton Inn Manhattan Soho,3
+26,7/27/2015 00:00,7/29/2015 00:00,5,3900,3600,2,6,Park Hyatt New York,5
+26,7/27/2015 00:00,8/1/2015 00:00,5,3900,3400,2,9,Park Hyatt New York,5
+26,7/27/2015 00:00,8/10/2015 00:00,5,3763,3455,2,30,Park Hyatt New York,5
+26,7/27/2015 00:00,8/11/2015 00:00,5,3763,3255,2,30,Park Hyatt New York,5
+26,7/27/2015 00:00,8/12/2015 00:00,5,3763,3455,2,30,Park Hyatt New York,5
+26,7/27/2015 00:00,8/13/2015 00:00,5,3763,3275,2,30,Park Hyatt New York,5
+26,7/27/2015 00:00,8/14/2015 00:00,5,3763,3455,2,46,Park Hyatt New York,5
+26,7/27/2015 00:00,8/15/2015 00:00,5,3763,3455,2,46,Park Hyatt New York,5
+26,7/27/2015 00:00,8/16/2015 00:00,5,3763,3455,2,48,Park Hyatt New York,5
+26,7/27/2015 00:00,8/17/2015 00:00,5,3763,3455,2,49,Park Hyatt New York,5
+26,7/27/2015 00:00,8/18/2015 00:00,5,3763,3455,2,49,Park Hyatt New York,5
+26,7/27/2015 00:00,8/27/2015 00:00,5,3030,2880,2,3,Mandarin Oriental New York,5
+26,7/27/2015 00:00,8/28/2015 00:00,5,3080,2930,2,3,Mandarin Oriental New York,5
+26,7/27/2015 00:00,7/30/2015 00:00,5,1375,1258,2,-1,Manhattan NYC-an Affinia hotel,4
+26,7/27/2015 00:00,8/9/2015 00:00,5,2003,1949,2,2,Andaz 5th Avenue - a concept by Hyatt,4
+26,7/27/2015 00:00,8/6/2015 00:00,5,2255,2105,2,-1,The Towers of the Waldorf Astoria New York,5
+26,7/27/2015 00:00,8/26/2015 00:00,5,2515,2435,2,-1,The Towers of the Waldorf Astoria New York,5
+26,7/27/2015 00:00,8/27/2015 00:00,5,2885,2775,2,-1,The Towers of the Waldorf Astoria New York,5
+26,7/27/2015 00:00,7/29/2015 00:00,5,1395,1315,2,-1,New York Hilton Midtown,4
+26,7/27/2015 00:00,8/27/2015 00:00,5,1305,1185,2,-1,New York Hilton Midtown,4
+26,7/27/2015 00:00,8/28/2015 00:00,5,1245,1185,2,-1,New York Hilton Midtown,4
+26,7/27/2015 00:00,8/7/2015 00:00,5,1663,1560,2,54,W New York - Union Square,5
+26,7/27/2015 00:00,8/8/2015 00:00,5,1797,1694,2,55,W New York - Union Square,5
+26,7/27/2015 00:00,8/12/2015 00:00,5,1656,1495,2,55,W New York - Union Square,5
+26,7/27/2015 00:00,8/14/2015 00:00,5,1715,1607,2,55,W New York - Union Square,5
+26,7/27/2015 00:00,8/12/2015 00:00,5,1995,1845,2,38,Loews Regency New York Hotel,5
+26,7/27/2015 00:00,8/13/2015 00:00,5,1995,1845,2,44,Loews Regency New York Hotel,5
+26,7/27/2015 00:00,8/19/2015 00:00,5,1995,1845,2,47,Loews Regency New York Hotel,5
+26,7/27/2015 00:00,8/20/2015 00:00,5,1995,1845,2,47,Loews Regency New York Hotel,5
+26,7/27/2015 00:00,8/26/2015 00:00,5,1995,1845,2,20,Loews Regency New York Hotel,5
+26,7/27/2015 00:00,8/27/2015 00:00,5,1995,1845,2,20,Loews Regency New York Hotel,5
+26,7/27/2015 00:00,7/28/2015 00:00,5,3475,3345,2,10,Four Seasons Hotel New York,5
+26,7/27/2015 00:00,7/29/2015 00:00,5,3475,3345,2,10,Four Seasons Hotel New York,5
+26,7/27/2015 00:00,8/11/2015 00:00,5,3475,3255,2,10,Four Seasons Hotel New York,5
+26,7/27/2015 00:00,8/12/2015 00:00,5,3475,3255,2,10,Four Seasons Hotel New York,5
+26,7/27/2015 00:00,8/18/2015 00:00,5,3475,3255,2,10,Four Seasons Hotel New York,5
+26,7/27/2015 00:00,8/19/2015 00:00,5,3475,3255,2,10,Four Seasons Hotel New York,5
+26,7/27/2015 00:00,8/26/2015 00:00,5,3475,3255,2,10,Four Seasons Hotel New York,5
+26,7/27/2015 00:00,8/27/2015 00:00,5,3475,3145,2,10,Four Seasons Hotel New York,5
+26,7/27/2015 00:00,7/30/2015 00:00,5,1056,980,2,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,1237,1163,2,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/13/2015 00:00,5,1237,1165,2,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/14/2015 00:00,5,1251,1157,2,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/21/2015 00:00,5,1237,1183,2,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,1395,1336,2,-1,Courtyard by Marriott New York Manhattan SoHo,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,1269,1215,2,-1,Courtyard by Marriott New York Manhattan SoHo,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1325,1267,2,-1,Courtyard by Marriott New York Manhattan SoHo,4
+26,7/27/2015 00:00,8/26/2015 00:00,5,1424,1360,2,-1,Courtyard by Marriott New York Manhattan SoHo,4
+26,7/27/2015 00:00,8/4/2015 00:00,5,750,670,2,-1,Hilton Newark Airport,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,750,670,2,-1,Hilton Newark Airport,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,750,670,2,-1,Hilton Newark Airport,4
+26,7/27/2015 00:00,8/1/2015 00:00,5,975,916,2,90,Sheraton JFK Airport Hotel,4
+26,7/27/2015 00:00,8/2/2015 00:00,5,945,883,2,92,Sheraton JFK Airport Hotel,4
+26,7/27/2015 00:00,7/28/2015 00:00,5,1425,1075,2,-1,Newark Liberty International Airport Marriott,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1355,1035,2,-1,Newark Liberty International Airport Marriott,4
+26,7/27/2015 00:00,7/30/2015 00:00,5,1355,1135,2,-1,Newark Liberty International Airport Marriott,4
+26,7/27/2015 00:00,8/15/2015 00:00,5,654,609,2,2,Super 8 Brooklyn   Park Slope Hotel,2
+26,7/27/2015 00:00,7/28/2015 00:00,5,1395,1135,2,-1,Home2 Suites by Hilton NY Long Island City Manhattan View,3
+26,7/27/2015 00:00,8/4/2015 00:00,5,1346,1057,2,-1,Home2 Suites by Hilton NY Long Island City Manhattan View,3
+26,7/27/2015 00:00,8/22/2015 00:00,5,806,751,2,-1,Hampton Inn JFK Airport,3
+26,7/27/2015 00:00,7/28/2015 00:00,5,1225,955,2,-1,Renaissance Newark Airport Hotel,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,1720,1579,2,351,Sheraton New York Times Square Hotel,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1475,1353,2,379,Sheraton New York Times Square Hotel,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,2435,1835,2,-1,Conrad New York,5
+26,7/27/2015 00:00,8/8/2015 00:00,5,2025,1725,2,-1,Conrad New York,5
+26,7/27/2015 00:00,8/13/2015 00:00,5,1845,1585,2,-1,Conrad New York,5
+26,7/27/2015 00:00,8/20/2015 00:00,5,1845,1585,2,-1,Conrad New York,5
+26,7/27/2015 00:00,8/27/2015 00:00,5,1845,1585,2,-1,Conrad New York,5
+26,7/27/2015 00:00,8/7/2015 00:00,5,1495,1295,2,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,1495,1315,2,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/13/2015 00:00,5,1495,1295,2,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1495,1195,2,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/20/2015 00:00,5,1495,1295,2,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/20/2015 00:00,5,1395,1335,2,20,Hyatt Times Square New York,4
+26,7/27/2015 00:00,8/23/2015 00:00,5,1645,1495,2,50,Hyatt Times Square New York,4
+26,7/27/2015 00:00,8/27/2015 00:00,5,1395,1335,2,18,Hyatt Times Square New York,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1685,1510,2,171,The Westin New York Grand Central,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,1555,1386,2,158,The Westin New York Grand Central,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1345,1200,2,154,The Westin New York Grand Central,4
+26,7/27/2015 00:00,7/28/2015 00:00,5,1395,1255,2,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1295,1215,2,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,8/1/2015 00:00,5,1595,1535,2,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,8/8/2015 00:00,5,1195,1135,2,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,8/21/2015 00:00,5,995,935,2,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,7/28/2015 00:00,5,1745,1525,2,-1,Hilton Garden Inn Times Square,4
+26,7/27/2015 00:00,8/8/2015 00:00,5,3475,3255,3,10,Four Seasons Hotel New York,5
+26,7/27/2015 00:00,7/30/2015 00:00,5,1056,946,3,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,1237,1115,3,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/6/2015 00:00,5,1053,997,3,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/13/2015 00:00,5,1237,999,3,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/20/2015 00:00,5,1224,988,3,-1,Hilton Manhattan East,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,1395,1336,3,-1,Courtyard by Marriott New York Manhattan SoHo,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,1269,1215,3,-1,Courtyard by Marriott New York Manhattan SoHo,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1325,1267,3,-1,Courtyard by Marriott New York Manhattan SoHo,4
+26,7/27/2015 00:00,8/21/2015 00:00,5,1349,1291,3,-1,Courtyard by Marriott New York Manhattan SoHo,4
+26,7/27/2015 00:00,8/26/2015 00:00,5,1424,1360,3,-1,Courtyard by Marriott New York Manhattan SoHo,4
+26,7/27/2015 00:00,8/29/2015 00:00,5,914,799,3,-1,Hilton Garden Inn New York Long Island City,3
+26,7/27/2015 00:00,8/5/2015 00:00,5,750,670,3,-1,Hilton Newark Airport,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,750,670,3,-1,Hilton Newark Airport,4
+26,7/27/2015 00:00,7/28/2015 00:00,5,1425,1165,3,-1,Newark Liberty International Airport Marriott,4
+26,7/27/2015 00:00,7/28/2015 00:00,5,1395,1315,3,-1,Home2 Suites by Hilton NY Long Island City Manhattan View,3
+26,7/27/2015 00:00,8/3/2015 00:00,5,1256,1093,3,-1,Home2 Suites by Hilton NY Long Island City Manhattan View,3
+26,7/27/2015 00:00,8/28/2015 00:00,5,806,751,3,-1,Hampton Inn JFK Airport,3
+26,7/27/2015 00:00,7/28/2015 00:00,5,1225,1005,3,-1,Renaissance Newark Airport Hotel,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1600,1391,3,367,Sheraton New York Times Square Hotel,4
+26,7/27/2015 00:00,8/4/2015 00:00,5,1920,1853,3,351,Sheraton New York Times Square Hotel,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,1720,1658,3,351,Sheraton New York Times Square Hotel,4
+26,7/27/2015 00:00,8/30/2015 00:00,5,1575,1448,3,380,Sheraton New York Times Square Hotel,4
+26,7/27/2015 00:00,8/8/2015 00:00,5,2025,1935,3,-1,Conrad New York,5
+26,7/27/2015 00:00,8/12/2015 00:00,5,1995,1715,3,-1,Conrad New York,5
+26,7/27/2015 00:00,8/19/2015 00:00,5,1845,1545,3,-1,Conrad New York,5
+26,7/27/2015 00:00,8/6/2015 00:00,5,1495,1075,3,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/7/2015 00:00,5,1495,1315,3,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,1495,1295,3,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/13/2015 00:00,5,1495,1075,3,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/20/2015 00:00,5,1495,1195,3,-1,Millenium Hilton,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1395,1295,3,20,Hyatt Times Square New York,4
+26,7/27/2015 00:00,8/21/2015 00:00,5,1395,1285,3,20,Hyatt Times Square New York,4
+26,7/27/2015 00:00,8/23/2015 00:00,5,1645,1585,3,50,Hyatt Times Square New York,4
+26,7/27/2015 00:00,8/26/2015 00:00,5,1395,1295,3,18,Hyatt Times Square New York,4
+26,7/27/2015 00:00,7/31/2015 00:00,5,1133,1042,3,8,Club Quarters Hotel Wall Street,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1685,1555,3,171,The Westin New York Grand Central,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,1555,1441,3,158,The Westin New York Grand Central,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1345,1245,3,154,The Westin New York Grand Central,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1295,1235,3,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,7/30/2015 00:00,5,995,935,3,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,8/3/2015 00:00,5,1595,1495,3,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,1595,1315,3,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,8/6/2015 00:00,5,995,895,3,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,8/20/2015 00:00,5,995,945,3,-1,DoubleTree by Hilton Metropolitan - New York City,4
+26,7/27/2015 00:00,7/28/2015 00:00,5,1745,1605,3,-1,Hilton Garden Inn Times Square,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,1451,1379,3,-1,Hilton Garden Inn Times Square,4
+26,7/27/2015 00:00,8/16/2015 00:00,5,1297,1213,3,-1,Hilton Garden Inn Times Square,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1256,1150,3,-1,Hilton Garden Inn Times Square,4
+26,7/27/2015 00:00,8/29/2015 00:00,5,1278,1111,3,-1,Hilton Garden Inn Times Square,4
+26,7/27/2015 00:00,7/30/2015 00:00,5,1645,1495,3,33,Hyatt Herald Square New York,4
+26,7/27/2015 00:00,7/31/2015 00:00,5,2245,1735,3,33,Hyatt Herald Square New York,4
+26,7/27/2015 00:00,8/1/2015 00:00,5,2495,2045,3,21,Hyatt Herald Square New York,4
+26,7/27/2015 00:00,8/15/2015 00:00,5,2036,1946,3,45,Hyatt Herald Square New York,4
+26,7/27/2015 00:00,8/21/2015 00:00,5,1483,1282,3,43,Hyatt Herald Square New York,4
+26,7/27/2015 00:00,8/22/2015 00:00,5,1611,1469,3,43,Hyatt Herald Square New York,4
+26,7/27/2015 00:00,8/30/2015 00:00,5,1745,1655,3,39,Hyatt Herald Square New York,4
+26,7/27/2015 00:00,7/28/2015 00:00,5,2105,2025,3,60,Westin New York at Times Square,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1875,1789,3,59,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/1/2015 00:00,5,2745,2519,3,50,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/7/2015 00:00,5,1685,1588,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/8/2015 00:00,5,1765,1620,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/10/2015 00:00,5,1745,1683,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/11/2015 00:00,5,1805,1737,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/12/2015 00:00,5,1695,1628,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/14/2015 00:00,5,1621,1477,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/15/2015 00:00,5,1687,1540,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/17/2015 00:00,5,1587,1530,3,64,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/18/2015 00:00,5,1637,1574,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1501,1443,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/21/2015 00:00,5,1465,1338,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/22/2015 00:00,5,1520,1389,3,61,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/24/2015 00:00,5,1550,1489,3,62,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/25/2015 00:00,5,1615,1548,3,62,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/26/2015 00:00,5,1570,1506,3,62,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/28/2015 00:00,5,1590,1448,3,62,Westin New York at Times Square,4
+26,7/27/2015 00:00,8/29/2015 00:00,5,1630,1489,3,65,Westin New York at Times Square,4
+26,7/27/2015 00:00,7/28/2015 00:00,5,1865,1625,3,-1,Hilton Times Square,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1935,1595,3,-1,Hilton Times Square,4
+26,7/27/2015 00:00,8/4/2015 00:00,5,1716,1568,3,-1,Hilton Times Square,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,1651,1504,3,-1,Hilton Times Square,4
+26,7/27/2015 00:00,8/29/2015 00:00,5,1555,1471,3,45,W New York - Downtown,5
+26,7/27/2015 00:00,8/14/2015 00:00,5,1358,1302,3,-1,Hampton Inn Manhattan Times Square Central,4
+26,7/27/2015 00:00,7/31/2015 00:00,5,1280,1210,3,3,The Evelyn (Formerly The Gershwin Hotel),4
+26,7/27/2015 00:00,8/11/2015 00:00,5,1290,1235,3,16,The Evelyn (Formerly The Gershwin Hotel),4
+26,7/27/2015 00:00,8/17/2015 00:00,5,1252,1196,3,3,The Evelyn (Formerly The Gershwin Hotel),4
+26,7/27/2015 00:00,8/20/2015 00:00,5,1211,1159,3,16,The Evelyn (Formerly The Gershwin Hotel),4
+26,7/27/2015 00:00,8/26/2015 00:00,5,1122,1071,3,2,The Evelyn (Formerly The Gershwin Hotel),4
+26,7/27/2015 00:00,8/4/2015 00:00,5,1940,1874,3,90,W New York Times Square,5
+26,7/27/2015 00:00,8/10/2015 00:00,5,1720,1624,3,101,W New York Times Square,5
+26,7/27/2015 00:00,8/12/2015 00:00,5,1605,1516,3,100,W New York Times Square,5
+26,7/27/2015 00:00,8/13/2015 00:00,5,1565,1419,3,100,W New York Times Square,5
+26,7/27/2015 00:00,8/17/2015 00:00,5,1680,1620,3,100,W New York Times Square,5
+26,7/27/2015 00:00,8/19/2015 00:00,5,1555,1468,3,101,W New York Times Square,5
+26,7/27/2015 00:00,8/26/2015 00:00,5,1500,1417,3,101,W New York Times Square,5
+26,7/27/2015 00:00,7/29/2015 00:00,5,1695,1542,3,-1,Waldorf Astoria New York,5
+26,7/27/2015 00:00,8/5/2015 00:00,5,1534,1474,3,-1,Waldorf Astoria New York,5
+26,7/27/2015 00:00,8/6/2015 00:00,5,1407,1355,3,-1,Waldorf Astoria New York,5
+26,7/27/2015 00:00,8/11/2015 00:00,5,1407,1355,3,-1,Waldorf Astoria New York,5
+26,7/27/2015 00:00,7/29/2015 00:00,5,2346,2124,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,7/30/2015 00:00,5,2413,2005,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,7/31/2015 00:00,5,2443,2056,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/4/2015 00:00,5,2443,2101,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/5/2015 00:00,5,2392,2050,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/7/2015 00:00,5,1844,1651,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/8/2015 00:00,5,1927,1875,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/12/2015 00:00,5,1624,1527,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/14/2015 00:00,5,1536,1440,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/15/2015 00:00,5,1605,1475,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/18/2015 00:00,5,1605,1545,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/24/2015 00:00,5,1513,1333,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/27/2015 00:00,5,1888,1413,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/28/2015 00:00,5,2204,1485,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/29/2015 00:00,5,2251,1959,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/30/2015 00:00,5,2251,2157,3,-1,Omni Berkshire Place,5
+26,7/27/2015 00:00,8/6/2015 00:00,5,1795,1733,3,-1,New York Marriott Marquis,4
+26,7/27/2015 00:00,8/7/2015 00:00,5,1732,1672,3,-1,New York Marriott Marquis,4
+26,7/27/2015 00:00,8/13/2015 00:00,5,1588,1537,3,-1,New York Marriott Marquis,4
+26,7/27/2015 00:00,8/14/2015 00:00,5,1633,1582,3,-1,New York Marriott Marquis,4
+26,7/27/2015 00:00,8/20/2015 00:00,5,1588,1533,3,-1,New York Marriott Marquis,4
+26,7/27/2015 00:00,8/21/2015 00:00,5,1570,1518,3,-1,New York Marriott Marquis,4
+26,7/27/2015 00:00,7/29/2015 00:00,5,1435,1335,3,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+26,7/27/2015 00:00,7/30/2015 00:00,5,1395,1335,3,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+26,7/27/2015 00:00,8/3/2015 00:00,5,1625,1495,3,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+26,7/27/2015 00:00,8/13/2015 00:00,5,1133,1040,3,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+26,7/27/2015 00:00,8/18/2015 00:00,5,1559,1361,3,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+26,7/27/2015 00:00,8/19/2015 00:00,5,1269,1208,3,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+26,7/27/2015 00:00,8/20/2015 00:00,5,1133,1042,3,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+26,7/27/2015 00:00,8/21/2015 00:00,5,1145,1067,3,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+26,7/27/2015 00:00,8/11/2015 00:00,5,1408,1343,3,-1,Hampton Inn New York - 35th Street - Empire State Building,3
+26,7/27/2015 00:00,8/12/2015 00:00,5,1309,1182,3,-1,Hampton Inn New York - 35th Street - Empire State Building,3
+26,7/27/2015 00:00,8/13/2015 00:00,5,1247,1192,3,-1,Hampton Inn New York - 35th Street - Empire State Building,3
+26,7/27/2015 00:00,8/14/2015 00:00,5,1345,1264,3,-1,Hampton Inn New York - 35th Street - Empire State Building,3
+26,7/27/2015 00:00,8/27/2015 00:00,5,1202,1129,3,-1,Hampton Inn New York - 35th Street - Empire State Building,3
+26,7/27/2015 00:00,8/17/2015 00:00,5,1355,1298,3,74,Four Points by Sheraton Manhattan SoHo Village,4
+26,7/27/2015 00:00,8/29/2015 00:00,5,1325,1166,3,75,Four Points by Sheraton Manhattan SoHo Village,4
+26,7/27/2015 00:00,8/30/2015 00:00,5,1275,1210,3,75,Four Points by Sheraton Manhattan SoHo Village,4
+26,7/27/2015 00:00,8/5/2015 00:00,5,1645,1575,3,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+26,7/27/2015 00:00,8/7/2015 00:00,5,1645,1295,3,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+26,7/27/2015 00:00,8/8/2015 00:00,5,1645,1355,3,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+26,7/27/2015 00:00,8/10/2015 00:00,5,1495,1415,3,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+26,7/27/2015 00:00,8/11/2015 00:00,5,1495,1415,3,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+26,7/27/2015 00:00,8/13/2015 00:00,5,1495,1375,3,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+26,7/27/2015 00:00,8/14/2015 00:00,5,1495,1315,3,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+31,7/30/2015 00:00,8/21/2015 00:00,5,2435,2275,4,-1,The Towers of the Waldorf Astoria New York,5
+31,7/30/2015 00:00,8/26/2015 00:00,5,2515,2405,4,-1,The Towers of the Waldorf Astoria New York,5
+31,7/30/2015 00:00,8/28/2015 00:00,5,3185,3105,4,-1,The Towers of the Waldorf Astoria New York,5
+31,7/30/2015 00:00,8/12/2015 00:00,5,1626,1572,4,54,W New York - Union Square,5
+31,7/30/2015 00:00,8/8/2015 00:00,5,3475,3090,4,10,Four Seasons Hotel New York,5
+31,7/30/2015 00:00,9/1/2015 00:00,5,5175,4665,4,10,Four Seasons Hotel New York,5
+31,7/30/2015 00:00,8/5/2015 00:00,5,1240,1162,4,-1,Hilton Manhattan East,4
+31,7/30/2015 00:00,8/6/2015 00:00,5,1211,1153,4,-1,Courtyard by Marriott New York Manhattan SoHo,4
+31,7/30/2015 00:00,8/13/2015 00:00,5,1193,1139,4,-1,Courtyard by Marriott New York Manhattan SoHo,4
+31,7/30/2015 00:00,8/20/2015 00:00,5,1213,1155,4,-1,Courtyard by Marriott New York Manhattan SoHo,4
+31,7/30/2015 00:00,8/27/2015 00:00,5,1304,1241,4,-1,Courtyard by Marriott New York Manhattan SoHo,4
+31,7/30/2015 00:00,8/9/2015 00:00,5,1000,880,4,5,Ravel Hotel,4
+31,7/30/2015 00:00,8/13/2015 00:00,5,1105,1035,4,27,Four Points by Sheraton Long Island City Queensboro Bridge,3
+31,7/30/2015 00:00,8/27/2015 00:00,5,784,686,4,-1,Hilton Garden Inn New York Long Island City,3
+31,7/30/2015 00:00,8/4/2015 00:00,5,750,710,4,-1,Hilton Newark Airport,4
+31,7/30/2015 00:00,8/11/2015 00:00,5,750,710,4,-1,Hilton Newark Airport,4
+31,7/30/2015 00:00,8/18/2015 00:00,5,1256,1183,4,-1,Home2 Suites by Hilton NY Long Island City Manhattan View,3
+31,7/30/2015 00:00,8/16/2015 00:00,5,1845,1735,4,-1,Conrad New York,5
+31,7/30/2015 00:00,8/23/2015 00:00,5,1845,1735,4,-1,Conrad New York,5
+31,7/30/2015 00:00,8/25/2015 00:00,5,1905,1815,4,-1,Conrad New York,5
+31,7/30/2015 00:00,8/27/2015 00:00,5,1905,1565,4,-1,Conrad New York,5
+31,7/30/2015 00:00,8/30/2015 00:00,5,1845,1775,4,-1,Conrad New York,5
+31,7/30/2015 00:00,8/4/2015 00:00,5,1795,1715,4,-1,Millenium Hilton,4
+31,7/30/2015 00:00,8/11/2015 00:00,5,1495,1395,4,-1,Millenium Hilton,4
+31,7/30/2015 00:00,8/18/2015 00:00,5,1495,1395,4,-1,Millenium Hilton,4
+31,7/30/2015 00:00,8/24/2015 00:00,5,1495,1395,4,-1,Millenium Hilton,4
+31,7/30/2015 00:00,8/26/2015 00:00,5,1495,1435,4,-1,Millenium Hilton,4
+31,7/30/2015 00:00,8/13/2015 00:00,5,1245,1194,4,-1,Courtyard by Marriott New York Manhattan Times Square,4
+31,7/30/2015 00:00,8/26/2015 00:00,5,1495,1395,4,7,Hyatt Times Square New York,4
+31,7/30/2015 00:00,8/27/2015 00:00,5,1495,1345,4,7,Hyatt Times Square New York,4
+31,7/30/2015 00:00,8/6/2015 00:00,5,1252,1175,4,10,Empire Hotel,4
+31,7/30/2015 00:00,8/9/2015 00:00,5,1275,1217,4,2,Fitzpatrick Manhattan Hotel,4
+31,7/30/2015 00:00,8/3/2015 00:00,5,1595,1435,4,-1,DoubleTree by Hilton Metropolitan - New York City,4
+31,7/30/2015 00:00,8/5/2015 00:00,5,1395,1245,4,-1,DoubleTree by Hilton Metropolitan - New York City,4
+31,7/30/2015 00:00,8/13/2015 00:00,5,895,785,4,-1,DoubleTree by Hilton Metropolitan - New York City,4
+31,7/30/2015 00:00,8/9/2015 00:00,5,1195,1135,4,-1,DoubleTree by Hilton Metropolitan - New York City,4
+31,7/30/2015 00:00,8/7/2015 00:00,5,1269,1199,4,-1,Hilton Garden Inn Times Square,4
+31,7/30/2015 00:00,8/12/2015 00:00,5,1483,1375,4,-1,Hilton Garden Inn Times Square,4
+31,7/30/2015 00:00,8/16/2015 00:00,5,1297,1185,4,-1,Hilton Garden Inn Times Square,4
+31,7/30/2015 00:00,8/19/2015 00:00,5,1256,1170,4,-1,Hilton Garden Inn Times Square,4
+31,7/30/2015 00:00,8/26/2015 00:00,5,1121,1061,4,-1,Hilton Garden Inn Times Square,4
+31,7/30/2015 00:00,8/28/2015 00:00,5,1086,1003,4,-1,Hilton Garden Inn Times Square,4
+31,7/30/2015 00:00,8/29/2015 00:00,5,1362,1223,4,-1,Hilton Garden Inn Times Square,4
+31,7/30/2015 00:00,9/2/2015 00:00,5,1413,1260,4,-1,Hilton Garden Inn Times Square,4
+31,7/30/2015 00:00,8/21/2015 00:00,5,1448,1279,4,39,Hyatt Herald Square New York,4
+31,7/30/2015 00:00,8/27/2015 00:00,5,1448,1194,4,38,Hyatt Herald Square New York,4
+31,7/30/2015 00:00,8/28/2015 00:00,5,1533,1389,4,37,Hyatt Herald Square New York,4
+31,7/30/2015 00:00,8/7/2015 00:00,5,1685,1491,4,59,Westin New York at Times Square,4
+31,7/30/2015 00:00,8/14/2015 00:00,5,1610,1430,4,61,Westin New York at Times Square,4
+31,7/30/2015 00:00,8/21/2015 00:00,5,1465,1294,4,72,Westin New York at Times Square,4
+31,7/30/2015 00:00,8/28/2015 00:00,5,1610,1420,4,72,Westin New York at Times Square,4
+31,7/30/2015 00:00,8/13/2015 00:00,5,1513,1430,4,-1,Hilton Times Square,4
+31,7/30/2015 00:00,8/28/2015 00:00,5,1425,1212,4,45,W New York - Downtown,5
+31,7/30/2015 00:00,8/5/2015 00:00,5,1387,1315,4,-1,Hampton Inn Manhattan Times Square Central,4
+31,7/30/2015 00:00,8/5/2015 00:00,5,1730,1677,4,90,W New York Times Square,5
+31,7/30/2015 00:00,8/11/2015 00:00,5,1720,1653,4,101,W New York Times Square,5
+31,7/30/2015 00:00,8/18/2015 00:00,5,1670,1605,4,99,W New York Times Square,5
+31,7/30/2015 00:00,8/22/2015 00:00,5,1440,1375,4,99,W New York Times Square,5
+31,7/30/2015 00:00,8/20/2015 00:00,5,1441,1314,4,-1,Waldorf Astoria New York,5
+31,7/30/2015 00:00,8/21/2015 00:00,5,1441,1339,4,-1,Waldorf Astoria New York,5
+31,7/30/2015 00:00,8/20/2015 00:00,5,1546,1435,4,-1,Omni Berkshire Place,5
+31,7/30/2015 00:00,8/27/2015 00:00,5,1931,1433,4,-1,Omni Berkshire Place,5
+31,7/30/2015 00:00,8/28/2015 00:00,5,2111,2013,4,-1,Omni Berkshire Place,5
+31,7/30/2015 00:00,8/30/2015 00:00,5,2111,2017,4,-1,Omni Berkshire Place,5
+31,7/30/2015 00:00,8/31/2015 00:00,5,2111,2037,4,-1,Omni Berkshire Place,5
+31,7/30/2015 00:00,8/6/2015 00:00,5,1795,1713,4,-1,New York Marriott Marquis,4
+31,7/30/2015 00:00,8/22/2015 00:00,5,1166,1081,4,-1,Hampton Inn New York Chelsea,3
+31,7/30/2015 00:00,8/3/2015 00:00,5,1625,1545,4,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+31,7/30/2015 00:00,8/13/2015 00:00,5,1245,1075,4,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+31,7/30/2015 00:00,8/26/2015 00:00,5,1133,1043,4,-1,Hilton Garden Inn New York Manhattan-Midtown East,4
+31,7/30/2015 00:00,8/26/2015 00:00,5,1235,1181,4,-1,Hampton Inn New York - 35th Street - Empire State Building,3
+31,7/30/2015 00:00,8/12/2015 00:00,5,1175,1073,4,73,Four Points by Sheraton Manhattan SoHo Village,4
+31,7/30/2015 00:00,9/2/2015 00:00,5,1385,1247,4,75,Four Points by Sheraton Manhattan SoHo Village,4
+31,7/30/2015 00:00,8/5/2015 00:00,5,1645,1495,4,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+31,7/30/2015 00:00,8/6/2015 00:00,5,1645,1215,4,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+31,7/30/2015 00:00,8/12/2015 00:00,5,1495,1315,4,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+31,7/30/2015 00:00,8/13/2015 00:00,5,1495,1195,4,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+31,7/30/2015 00:00,8/21/2015 00:00,5,1395,1165,4,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+31,7/30/2015 00:00,8/28/2015 00:00,5,1695,1615,4,-1,Homewood Suites by Hilton NY Midtown Manhattan Times Square,3
+31,7/30/2015 00:00,8/6/2015 00:00,5,1148,981,4,-1,Hilton Garden Inn New York Midtown Park Ave,4
+31,7/30/2015 00:00,8/11/2015 00:00,5,1449,1364,4,-1,Hilton Garden Inn New York Midtown Park Ave,4
+31,7/30/2015 00:00,8/12/2015 00:00,5,1434,1326,4,-1,Hilton Garden Inn New York Midtown Park Ave,4
+31,7/30/2015 00:00,8/13/2015 00:00,5,1148,981,4,-1,Hilton Garden Inn New York Midtown Park Ave,4
+31,7/30/2015 00:00,8/20/2015 00:00,5,1010,921,4,-1,Hilton Garden Inn New York Midtown Park Ave,4
+31,7/30/2015 00:00,8/26/2015 00:00,5,1108,1057,4,-1,Hilton Garden Inn New York Midtown Park Ave,4
+31,7/30/2015 00:00,8/27/2015 00:00,5,975,922,4,-1,Hilton Garden Inn New York Midtown Park Ave,4
+31,7/30/2015 00:00,9/2/2015 00:00,5,1242,1190,4,-1,Hilton Garden Inn New York Midtown Park Ave,4
+31,7/30/2015 00:00,8/24/2015 00:00,5,1275,1120,4,-1,Comfort Inn Times Square South Area,3
+31,7/30/2015 00:00,8/5/2015 00:00,5,1042,970,4,-1,Hilton Garden Inn New York Central Park South-Midtown West,4
+31,7/30/2015 00:00,8/6/2015 00:00,5,1042,962,4,-1,Hilton Garden Inn New York Central Park South-Midtown West,4
+31,7/30/2015 00:00,8/19/2015 00:00,5,1106,1025,4,-1,Hilton Garden Inn New York Central Park South-Midtown West,4
+31,7/30/2015 00:00,8/26/2015 00:00,5,951,897,4,-1,Hilton Garden Inn New York Central Park South-Midtown West,4
+31,7/30/2015 00:00,9/2/2015 00:00,5,1249,1177,4,-1,Hilton Garden Inn New York Central Park South-Midtown West,4
+31,7/30/2015 00:00,8/6/2015 00:00,5,1354,1069,4,-1,Hampton Inn Manhattan-Seaport-Financial District,3
+31,7/30/2015 00:00,8/3/2015 00:00,5,1819,1711,4,-1,DoubleTree by Hilton Hotel New York - Times Square South,4
+31,7/30/2015 00:00,8/4/2015 00:00,5,1705,1629,4,-1,Hilton Garden Inn New York-Times Square Central,4
+31,7/30/2015 00:00,8/13/2015 00:00,5,1325,1126,4,-1,Hilton Garden Inn New York-Times Square Central,4
+31,7/30/2015 00:00,8/19/2015 00:00,5,1325,1211,4,-1,Hilton Garden Inn New York-Times Square Central,4
+31,7/30/2015 00:00,8/21/2015 00:00,5,1325,1126,4,-1,Hilton Garden Inn New York-Times Square Central,4
+31,7/30/2015 00:00,8/27/2015 00:00,5,1325,1098,4,-1,Hilton Garden Inn New York-Times Square Central,4
+31,7/30/2015 00:00,8/9/2015 00:00,5,1705,1591,4,-1,Hilton Garden Inn New York-Times Square Central,4
+31,7/30/2015 00:00,8/16/2015 00:00,5,1571,1516,4,47,Gild Hall A Thompson Hotel,5
+31,7/30/2015 00:00,8/17/2015 00:00,5,1571,1480,4,47,Gild Hall A Thompson Hotel,5
+31,7/30/2015 00:00,8/31/2015 00:00,5,1571,1516,4,42,Gild Hall A Thompson Hotel,5
+31,7/30/2015 00:00,8/1/2015 00:00,5,2308,2253,4,6,The High Line Hotel,4
+31,7/30/2015 00:00,8/25/2015 00:00,5,1425,1365,4,3,Andaz Wall Street - a concept by Hyatt,4
+31,7/30/2015 00:00,8/8/2015 00:00,5,1782,1683,4,2,Smyth A Thompson Hotel,5
+31,7/30/2015 00:00,8/29/2015 00:00,5,1734,1677,4,13,Smyth A Thompson Hotel,5
+31,7/30/2015 00:00,7/31/2015 00:00,5,1485,1395,4,-1,Residence Inn by Marriott New York Manhattan Midtown East,4
