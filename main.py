@@ -1,34 +1,19 @@
 import warnings
-
 import pandas as pd
 import numpy as np
-from pandas import Series, DataFrame
-
 import seaborn as sns
 from sklearn.exceptions import UndefinedMetricWarning
 import sklearn.exceptions
+from sklearn.cross_validation import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, precision_score, roc_auc_score
+from sklearn import preprocessing
 
 warnings.filterwarnings("ignore", category=sklearn.exceptions.UndefinedMetricWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 sns.set_style('whitegrid')
-
-from sklearn.linear_model import LogisticRegression
-from sklearn.cross_validation import train_test_split
-from sklearn import metrics
-
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
-
-from sklearn.naive_bayes import GaussianNB
-
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, precision_score
-from sklearn import preprocessing
-
-
-def mainClassify():
-    nb2Classifier()
 
 
 def main():
@@ -63,45 +48,45 @@ def main():
     print(df)
 
 
-def classificationPrediction(df):
-    X = df[['Snapshot Date', 'Checkin Date', 'DayDiff']].as_matrix()
-    # X = df[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']].as_matrix()
-    # X = df[['DayDiff', 'Hotel Name', 'WeekDay']].as_matrix()
-    # X = df[['DayDiff', 'Original Price', 'Discount Price']].as_matrix()
-
-    Y = df['Discount Code'].as_matrix()
-
-    # Grab data
-    hotel_data = DataFrame(X, columns=['Snapshot Date', 'Checkin Date', 'DayDiff'])
-    # hotel_data = DataFrame(X, columns=['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay'])
-    # hotel_data = DataFrame(X, columns=['DayDiff', 'Hotel Name', 'WeekDay'])
-    # hotel_data = DataFrame(X, columns=['DayDiff', 'Original Price', 'Discount Price'])
-
-    # Grab Target
-    hotel_target = DataFrame(Y, columns=['Discount Code'])
-
-    hotel_target['Discount Code'] = hotel_target['Discount Code'].apply(categoryName)
-
-    # Create a combined Iris DataSet
-    hotel = pd.concat([hotel_data, hotel_target], axis=1)
-    # nbClassifier(hotel)
-
-    # Create a Logistic Regression Class object
-    # logreg = LogisticRegression()
-
-    # Split the data into Trainging and Testing sets
-    # X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.4, random_state=3)
-
-    # Train the model with the training set
-    # logreg.fit(X_train, Y_train)
-
-    # Prediction from X_test
-    # Y_pred = logreg.predict(X_test)
-
-    # Check accuracy
-    # print(metrics.accuracy_score(Y_test, Y_pred))
-
-    # print(hotel)
+# def classificationPrediction(df):
+#     X = df[['Snapshot Date', 'Checkin Date', 'DayDiff']].as_matrix()
+#     # X = df[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']].as_matrix()
+#     # X = df[['DayDiff', 'Hotel Name', 'WeekDay']].as_matrix()
+#     # X = df[['DayDiff', 'Original Price', 'Discount Price']].as_matrix()
+#
+#     Y = df['Discount Code'].as_matrix()
+#
+#     # Grab data
+#     hotel_data = DataFrame(X, columns=['Snapshot Date', 'Checkin Date', 'DayDiff'])
+#     # hotel_data = DataFrame(X, columns=['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay'])
+#     # hotel_data = DataFrame(X, columns=['DayDiff', 'Hotel Name', 'WeekDay'])
+#     # hotel_data = DataFrame(X, columns=['DayDiff', 'Original Price', 'Discount Price'])
+#
+#     # Grab Target
+#     hotel_target = DataFrame(Y, columns=['Discount Code'])
+#
+#     hotel_target['Discount Code'] = hotel_target['Discount Code'].apply(categoryName)
+#
+#     # Create a combined Iris DataSet
+#     hotel = pd.concat([hotel_data, hotel_target], axis=1)
+#     # nbClassifier(hotel)
+#
+#     # Create a Logistic Regression Class object
+#     # logreg = LogisticRegression()
+#
+#     # Split the data into Trainging and Testing sets
+#     # X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.4, random_state=3)
+#
+#     # Train the model with the training set
+#     # logreg.fit(X_train, Y_train)
+#
+#     # Prediction from X_test
+#     # Y_pred = logreg.predict(X_test)
+#
+#     # Check accuracy
+#     # print(metrics.accuracy_score(Y_test, Y_pred))
+#
+#     # print(hotel)
 
 
 def categoryName(num):
@@ -134,42 +119,19 @@ def createFormattedDataFile():
 def nbClassifier():
     try:
         data = pd.read_csv('formatted_removed_cols.csv')
-        data['Discount Code'] = data['Discount Code'].apply(categoryName)
-        vectorizer = CountVectorizer()
-        # counts = vectorizer.fit_transform(data['Discount Code'].values)
-        counts = vectorizer.fit_transform(data['Hotel Name'].values)
-        # print(counts)
-
-        classifier = MultinomialNB()
-        targets = data['Discount Code'].values
-        classifier.fit(counts, targets)
-
-        # sampleData = data.iloc[::15, :]
-        sampleData = data.head(1)
-        sampleData = sampleData.drop('Discount Code', 1)
-        example_counts = vectorizer.transform(sampleData)
-        predictions = classifier.predict(example_counts)
-        print(predictions)
-        # print(counts)
-
-    except Exception as e:
-        print(e)
-
-
-def nb2Classifier():
-    try:
-        data = pd.read_csv('formatted_removed_cols.csv')
         for column in data.columns:
             if data[column].dtype == type(object):
                 le = preprocessing.LabelEncoder()
                 data[column] = le.fit_transform(data[column])
         x = data[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']]
-        y = data['Discount Code']  # .apply(categoryName)
+        y = data['Discount Code']
         x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
         classifier = GaussianNB()
         classifier.fit(x_train, y_train)
-        print "Naive-Bayes: Accuracy is ", accuracy_score(y_test, classifier.predict(x_test)) * 100, \
-            ",Precision is ", precision_score(y_test, classifier.predict(x_test), average='weighted') * 100
+        y_prediction = classifier.predict(x_test)
+        print "Naive-Bayes: Accuracy is " + str(accuracy_score(y_test, y_prediction) * 100) + \
+            ", Precision is" + str(precision_score(y_test, y_prediction, average='macro') * 100) +  \
+            ", ROC is" + str(roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
     except UndefinedMetricWarning as e:
         # Do nothing
         pass
@@ -188,12 +150,14 @@ def dtClassifier():
                 le = preprocessing.LabelEncoder()
                 data[column] = le.fit_transform(data[column])
         x = data[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']]
-        y = data['Discount Code']  # .apply(categoryName)
+        y = data['Discount Code']
         x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
         classifier = DecisionTreeClassifier(criterion="entropy")
         classifier.fit(x_train, y_train)
-        print "Decision-Tree: Accuracy is ", accuracy_score(y_test, classifier.predict(x_test)) * 100, \
-            ",Precision is ", precision_score(y_test, classifier.predict(x_test), average='weighted') * 100
+        y_prediction = classifier.predict(x_test)
+        print "Decision-Tree: Accuracy is " + str(accuracy_score(y_test, y_prediction) * 100) + \
+            ", Precision is" + str(precision_score(y_test, y_prediction, average='macro') * 100) +  \
+            ", ROC is" + str(roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
     except UndefinedMetricWarning as e:
         # Do nothing
         pass
@@ -205,6 +169,5 @@ def dtClassifier():
 
 
 # main()
-# mainClassify()
 dtClassifier()
-nb2Classifier()
+nbClassifier()
