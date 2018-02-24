@@ -2,13 +2,8 @@ import warnings
 import pandas as pd
 import numpy as np
 import seaborn as sns
-from sklearn.exceptions import UndefinedMetricWarning
-import sklearn.exceptions
-from sklearn.cross_validation import train_test_split
-from sklearn.naive_bayes import GaussianNB
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, precision_score, roc_auc_score
-from sklearn import preprocessing
+import sklearn
+from sklearn import preprocessing, model_selection, tree, naive_bayes
 
 warnings.filterwarnings("ignore", category=sklearn.exceptions.UndefinedMetricWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -125,19 +120,13 @@ def nbClassifier():
                 data[column] = le.fit_transform(data[column])
         x = data[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']]
         y = data['Discount Code']
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
-        classifier = GaussianNB()
+        x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size=0.3)
+        classifier = naive_bayes.GaussianNB()
         classifier.fit(x_train, y_train)
         y_prediction = classifier.predict(x_test)
-        print "Naive-Bayes: Accuracy is " + str(accuracy_score(y_test, y_prediction) * 100) + \
-            ", Precision is" + str(precision_score(y_test, y_prediction, average='macro') * 100) +  \
-            ", ROC is" + str(roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
-    except UndefinedMetricWarning as e:
-        # Do nothing
-        pass
-    except DeprecationWarning as e:
-        # Do nothing
-        pass
+        print "Naive-Bayes: Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
+            ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)  # +  \
+            # ", ROC is" + str(sklearn.metrics.roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
     except Exception as e:
         print(e)
 
@@ -151,19 +140,13 @@ def dtClassifier():
                 data[column] = le.fit_transform(data[column])
         x = data[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']]
         y = data['Discount Code']
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
-        classifier = DecisionTreeClassifier(criterion="entropy")
+        x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size=0.3)
+        classifier = tree.DecisionTreeClassifier(criterion="entropy")
         classifier.fit(x_train, y_train)
         y_prediction = classifier.predict(x_test)
-        print "Decision-Tree: Accuracy is " + str(accuracy_score(y_test, y_prediction) * 100) + \
-            ", Precision is" + str(precision_score(y_test, y_prediction, average='macro') * 100) +  \
-            ", ROC is" + str(roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
-    except UndefinedMetricWarning as e:
-        # Do nothing
-        pass
-    except DeprecationWarning as e:
-        # Do nothing
-        pass
+        print "Decision-Tree: Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
+            ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)  # +  \
+            # ", ROC is" + str(sklearn.metrics.roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
     except Exception as e:
         print(e)
 
