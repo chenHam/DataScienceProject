@@ -1,9 +1,23 @@
 import warnings
+
+from datetime import datetime
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import sklearn
+from pyspark.mllib.regression import LabeledPoint
 from sklearn import preprocessing, model_selection, tree, naive_bayes
+from pyspark import SparkContext, Row
+from pyspark.mllib.tree import DecisionTree
+from pyspark.mllib.util import MLUtils
+from pyspark.sql.functions import expr
+from pyspark.sql.functions import udf
+from pyspark.sql.types import DoubleType
+from pyspark.sql.functions import to_timestamp
+from pyspark.sql.functions import udf
+from pyspark.sql import SparkSession
+from pyspark.mllib.classification import NaiveBayes
+import hashlib
 
 warnings.filterwarnings("ignore", category=sklearn.exceptions.UndefinedMetricWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -111,7 +125,12 @@ def createFormattedDataFile():
     return
 
 
-def nbClassifier():
+def sklearn_classifiers():
+    nbClassifier()
+    dtClassifier()
+
+
+def classify(classifier):
     try:
         data = pd.read_csv('formatted_removed_cols.csv')
         for column in data.columns:
@@ -121,36 +140,136 @@ def nbClassifier():
         x = data[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']]
         y = data['Discount Code']
         x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size=0.3)
-        classifier = naive_bayes.GaussianNB()
         classifier.fit(x_train, y_train)
         y_prediction = classifier.predict(x_test)
-        print "Naive-Bayes: Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
+        print str(type(classifier)) + ": Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
             ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)  # +  \
             # ", ROC is" + str(sklearn.metrics.roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
     except Exception as e:
         print(e)
+
+
+def nbClassifier():
+    # try:
+    #     data = pd.read_csv('formatted_removed_cols.csv')
+    #     for column in data.columns:
+    #         if data[column].dtype == type(object):
+    #             le = preprocessing.LabelEncoder()
+    #             data[column] = le.fit_transform(data[column])
+    #     x = data[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']]
+    #     y = data['Discount Code']
+    #     x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size=0.3)
+    #     classifier = naive_bayes.GaussianNB()
+    #     classifier.fit(x_train, y_train)
+    #     y_prediction = classifier.predict(x_test)
+    #     print "Naive-Bayes: Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
+    #         ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)  # +  \
+    #         # ", ROC is" + str(sklearn.metrics.roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
+    # except Exception as e:
+    #     print(e)
+    classify(naive_bayes.GaussianNB())
 
 
 def dtClassifier():
-    try:
-        data = pd.read_csv('formatted_removed_cols.csv')
-        for column in data.columns:
-            if data[column].dtype == type(object):
-                le = preprocessing.LabelEncoder()
-                data[column] = le.fit_transform(data[column])
-        x = data[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']]
-        y = data['Discount Code']
-        x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size=0.3)
-        classifier = tree.DecisionTreeClassifier(criterion="entropy")
-        classifier.fit(x_train, y_train)
-        y_prediction = classifier.predict(x_test)
-        print "Decision-Tree: Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
-            ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)  # +  \
-            # ", ROC is" + str(sklearn.metrics.roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
-    except Exception as e:
-        print(e)
+    # try:
+    #     data = pd.read_csv('formatted_removed_cols.csv')
+    #     for column in data.columns:
+    #         if data[column].dtype == type(object):
+    #             le = preprocessing.LabelEncoder()
+    #             data[column] = le.fit_transform(data[column])
+    #     x = data[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']]
+    #     y = data['Discount Code']
+    #     x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size=0.3)
+    #     classifier = tree.DecisionTreeClassifier(criterion="entropy")
+    #     classifier.fit(x_train, y_train)
+    #     y_prediction = classifier.predict(x_test)
+    #     print "Decision-Tree: Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
+    #         ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)  # +  \
+    #         # ", ROC is" + str(sklearn.metrics.roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
+    # except Exception as e:
+    #     print(e)
+    classify(sklearn.tree.DecisionTreeClassifier(criterion="entropy"))
+
+
+def hotelname_to_int(name):
+    str_name = str(name.encode("utf-8"))
+    return float(int(hashlib.md5(str_name).hexdigest()[:16], 16))
+
+
+def weekday_to_int(weekday):
+    weekdays = {"Sun": 1, "Mon": 2, "Tue": 3, "Wed": 4, "Thu": 5, "Fri": 6, "Sat": 7}
+    return float(weekdays.get(weekday))
+
+
+def datetime_to_int(dts):
+    epoch = datetime.utcfromtimestamp(0)
+    dt = datetime.strptime(dts, '%m/%d/%Y')
+    return (dt - epoch).total_seconds()
+
+
+def spark_classifiers():
+    spark = SparkSession.builder.master("local").appName("Classifier").getOrCreate()
+    data = spark.read.format("csv") \
+        .option("header", "true") \
+        .option("inferSchema", "true") \
+        .load("formatted_removed_cols.csv")
+    data.cache()  # Cache data for faster reuse
+    udfHotelNameToInt = udf(hotelname_to_int, DoubleType())
+    udfWeekDayToInt = udf(weekday_to_int, DoubleType())
+    udfDateToInt = udf(datetime_to_int, DoubleType())
+    data = data.withColumn("DiscountCode", data["Discount Code"]) \
+        .withColumn("SnapshotDate", udfDateToInt("Snapshot Date")) \
+        .withColumn("CheckinDate", udfDateToInt("Checkin Date")) \
+        .withColumn("HotelName", udfHotelNameToInt("Hotel Name")) \
+        .withColumn("WeekDay", udfWeekDayToInt("WeekDay"))
+    data = data.select("DiscountCode", "SnapshotDate", "CheckinDate", "Days", "HotelName", "DayDiff", "WeekDay")
+    data = data.rdd.map(lambda x: LabeledPoint(x[0], x[1:]))
+    trainingData, testData = data.randomSplit([0.7, 0.3])
+    spark_dt_classifier(trainingData, testData)
+    spark_nb_classifier(trainingData, testData)
+
+
+def spark_dt_classifier(trainingData, testData):
+    # spark = SparkSession.builder.master("local").appName("Classifier").getOrCreate()
+    # data = spark.read.format("csv") \
+    #     .option("header", "true") \
+    #     .option("inferSchema", "true") \
+    #     .load("formatted_removed_cols.csv")
+    # data.cache()  # Cache data for faster reuse
+    # data = data.withColumn("DiscountCode", data["Discount Code"].cast(DoubleType())) \
+    #     .withColumn("SnapshotDate", data["Snapshot Date"].cast(DoubleType())) \
+    #     .withColumn("CheckinDate", data["Checkin Date"].cast(DoubleType())) \
+    #     .withColumn("Days", data["Days"].cast(DoubleType())) \
+    #     .withColumn("HotelName", data["Hotel Name"].cast(DoubleType())) \
+    #     .withColumn("DayDiff", data["DayDiff"].cast(DoubleType())) \
+    #     .withColumn("WeekDay", data["WeekDay"].cast(DoubleType()))
+    # data = data.select("DiscountCode", "SnapshotDate", "CheckinDate",
+    #                    "Days", "HotelName", "DayDiff", "WeekDay")
+    # data = data.rdd.map(lambda x: LabeledPoint(x[0], x[1:]))
+    # trainingData, testData = data.randomSplit([0.7, 0.3])
+    model = DecisionTree.trainClassifier(trainingData, numClasses=5, categoricalFeaturesInfo={},
+                                         impurity='entropy', maxDepth=5, maxBins=32)
+    predictions = model.predict(testData.map(lambda x: x.features))
+    labelsAndPredictions = testData.map(lambda lp: lp.label).zip(predictions)
+    testErr = labelsAndPredictions.filter(
+        lambda lp: lp[0] != lp[1]).count() / float(testData.count())
+    print('Test Error = ' + str(testErr))
+    print('Learned classification tree model:')
+    print(model.toDebugString())
+    # spark = SparkSession.builder.master("local").appName("Classifier").getOrCreate()
+    # data = spark.read.format("csv").option("header", "true").option("mode", "DROPMALFORMED") \
+    #     .load("formatted_removed_cols.csv")
+    # print type(data)
+
+
+def spark_nb_classifier(trainingData, testData):
+    # trainingData, testData = data.randomSplit([0.7, 0.3])
+    model = NaiveBayes.train(trainingData, 1.0)
+    predictionAndLabel = testData.map(lambda p: (model.predict(p.features), p.label))
+    accuracy = 1.0 * predictionAndLabel.filter(lambda pl: pl[0] == pl[1]).count() / testData.count()
+    print('model accuracy {}'.format(accuracy))
 
 
 # main()
-dtClassifier()
-nbClassifier()
+# sklearn_classifiers()
+spark_classifiers()
