@@ -292,5 +292,5 @@ def spark_nb_classifier(training_data, test_data):
 
 
 # main()
-# sklearn_classifiers()
-# spark_classifiers()
+sklearn_classifiers()
+spark_classifiers()
