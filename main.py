@@ -1,10 +1,11 @@
 import warnings
-
+import matplotlib.pyplot as plt
 from datetime import datetime
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import sklearn
+import scikitplot as skplt
 from pyspark.mllib.regression import LabeledPoint
 from sklearn import preprocessing, model_selection, tree, naive_bayes
 from pyspark import SparkContext, Row
@@ -155,9 +156,11 @@ def classify(classifier, x, y):
         x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size=0.3)
         classifier.fit(x_train, y_train)
         y_prediction = classifier.predict(x_test)
+        y_prediction2 = classifier.predict_proba(x_test)
         print str(type(classifier)) + ": Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
-            ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)  # +  \
-            # ", ROC is" + str(sklearn.metrics.roc_auc_score(y_test, y_prediction))  # TODO - ROC is multiclass format is not supported
+            ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)
+        skplt.metrics.plot_roc_curve(y_test, y_prediction2)
+        plt.show()
     except Exception as e:
         print(e)
 
@@ -293,4 +296,4 @@ def spark_nb_classifier(training_data, test_data):
 
 # main()
 sklearn_classifiers()
-spark_classifiers()
+# spark_classifiers()
