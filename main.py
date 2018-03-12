@@ -15,6 +15,7 @@ from pyspark.sql.functions import expr
 from pyspark.sql.functions import udf
 from pyspark.sql.types import DoubleType
 from pyspark.sql.functions import to_timestamp
+from sklearn.metrics import confusion_matrix
 from pyspark.sql.functions import udf
 from pyspark.sql import SparkSession
 from pyspark.mllib.classification import NaiveBayes
@@ -157,8 +158,22 @@ def classify(classifier, x, y):
         classifier.fit(x_train, y_train)
         y_prediction = classifier.predict(x_test)
         y_prediction2 = classifier.predict_proba(x_test)
+        matrix = pd.DataFrame(confusion_matrix(y_test, y_prediction))
+        fp = matrix.sum(axis=0) - np.diag(matrix)
+        fn = matrix.sum(axis=1) - np.diag(matrix)
         print str(type(classifier)) + ": Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
-            ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)
+            ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)  # + \
+            # ", False Positive is " + str(fp) + ", False Negative is " + str(fn)
+        print "False Positive:"
+        i = 1
+        for rate in fp:
+            print "Label", i, "=", rate
+            i += 1
+        i = 1
+        print "False Negative:"
+        for rate in fn:
+            print "Label", i, "=", rate
+            i += 1
         skplt.metrics.plot_roc_curve(y_test, y_prediction2)
         plt.show()
     except Exception as e:
