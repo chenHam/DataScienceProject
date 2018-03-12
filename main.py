@@ -19,6 +19,7 @@ from pyspark.sql.functions import udf
 from pyspark.sql import SparkSession
 from pyspark.mllib.classification import NaiveBayes
 import hashlib
+import pandasql as pdsql
 
 warnings.filterwarnings("ignore", category=sklearn.exceptions.UndefinedMetricWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -26,15 +27,13 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 sns.set_style('whitegrid')
 
 
-def main():
+def createHotelsDataChangedFile():
     # read csv file
     df = pd.read_csv('hotels_data.csv')
 
-    # convert columns to datetime from string
+    # convert columns from string to datetime
     df['Snapshot Date'] = pd.to_datetime(df['Snapshot Date'])
     df['Checkin Date'] = pd.to_datetime(df['Checkin Date'])
-
-    # df['DayDiff'] = diff_dates(df['Snapshot Date'], df['Checkin Date'])
 
     # calculate days difference beteween snapshot and checkin dates
     df['DayDiff'] = abs((df['Snapshot Date'] - df['Checkin Date']).dt.days)
@@ -42,20 +41,42 @@ def main():
     # extracts day name for each checkin date
     df['WeekDay'] = df['Checkin Date'].dt.strftime('%a')
 
+    # calculate discount difference
     df['DiscountDiff'] = df['Original Price'] - df['Discount Price']
 
+    # calculate discount percentage
     df['DiscountPerc'] = (df['DiscountDiff'] / df['Original Price']) * 100
 
     df['DayDiff'] = df['DayDiff'].astype(np.float64)
     df['Original Price'] = df['Original Price'].astype(np.float64)
     df['Discount Price'] = df['Discount Price'].astype(np.float64)
 
-    df.to_csv('new_file.csv', sep=',')
-    # createFormattedDataFile()
+    # save to dataframe to a new csv file
+    df.to_csv('Hotels_data_Changed.csv', index=False)
 
-    # classificationPrediction(df)
+def createFormattedFileEx2():
+    # read csv file
+    df = pd.read_csv('Hotels_data_Changed.csv')
 
-    print(df)
+    # remove whitespace from colnames
+    df.rename(columns={'Snapshot Date': 'SnapshotDate'}, inplace=True)
+    df.rename(columns={'Checkin Date': 'CheckinDate'}, inplace=True)
+    df.rename(columns={'Discount Code': 'DiscountCode'}, inplace=True)
+    df.rename(columns={'Hotel Name': 'HotelName'}, inplace=True)
+    needed_columns = ['SnapshotDate', 'CheckinDate', 'DiscountCode', 'HotelName', 'DayDiff', 'WeekDay', 'DiscountDiff']
+
+    # create new dataframe with only the needed columns
+    cf = df[needed_columns]
+
+    # query for filtering the rows with the max DiscountDiff for
+    # each SnapshotDate, CheckinDate, DiscountCode, HotelName, DayDiff, WeekDay combination
+    query = 'select SnapshotDate, CheckinDate, DiscountCode, HotelName, DayDiff, WeekDay, max(DiscountDiff) ' \
+            'from cf group by SnapshotDate, CheckinDate, HotelName, DayDiff, WeekDay'
+
+    df = pdsql.sqldf(query)
+
+    # save to dataframe to a new csv file
+    df.to_csv('formatted_data_ex2.csv', index=False)
 
 
 # def classificationPrediction(df):
@@ -98,34 +119,6 @@ def main():
 #
 #     # print(hotel)
 
-
-def categoryName(num):
-    ''' Takes in numerical class, returns flower name'''
-    if num == 0:
-        return 'First'
-    elif num == 1:
-        return 'Second'
-    # elif num == 2:
-    #    return 'Third'
-    elif num == 3:
-        return 'Fourth'
-    else:
-        return 'Else'
-
-
-def createFormattedDataFile():
-    df = pd.read_csv('new_file.csv')
-    groups = df.groupby(['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay'], sort=False)
-    # max = groups['DiscountPerc'].max()
-    # temp = groups.transform(max) == df['DiscountPerc']
-    maxRows = df.loc[groups["DiscountPerc"].idxmax()]
-
-    maxRows.to_csv('formatted_max_file.csv', sep=',')
-    print(maxRows)
-
-    return
-
-
 def sklearn_classifiers():
     """
     Invoke Decision-Tree and Naive-Bayes classifiers (Using sklearn lib)
@@ -157,8 +150,8 @@ def classify(classifier, x, y):
         classifier.fit(x_train, y_train)
         y_prediction = classifier.predict(x_test)
         y_prediction2 = classifier.predict_proba(x_test)
-        print str(type(classifier)) + ": Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
-            ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100)
+        print(str(type(classifier)) + ": Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
+            ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100))
         skplt.metrics.plot_roc_curve(y_test, y_prediction2)
         plt.show()
     except Exception as e:
@@ -294,6 +287,12 @@ def spark_nb_classifier(training_data, test_data):
     print('model accuracy {}'.format(accuracy))
 
 
-# main()
-sklearn_classifiers()
+
+#sklearn_classifiers()
 # spark_classifiers()
+
+# create hotels_data_changed.csv file (ex1)
+#createHotelsDataChangedFile()
+
+
+createFormattedFileEx2()
