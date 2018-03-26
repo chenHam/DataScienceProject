@@ -15,6 +15,7 @@ from pyspark.sql.functions import expr
 from pyspark.sql.functions import udf
 from pyspark.sql.types import DoubleType
 from pyspark.sql.functions import to_timestamp
+from sklearn.metrics import confusion_matrix
 from pyspark.sql.functions import udf
 from pyspark.sql import SparkSession
 from pyspark.mllib.classification import NaiveBayes
@@ -70,7 +71,7 @@ def createFormattedFileEx2():
 
     # query for filtering the rows with the max DiscountDiff for
     # each SnapshotDate, CheckinDate, DiscountCode, HotelName, DayDiff, WeekDay combination
-    query = 'select SnapshotDate, CheckinDate, DiscountCode, HotelName, DayDiff, WeekDay, max(DiscountDiff) ' \
+    query = 'select SnapshotDate, CheckinDate, DiscountCode, HotelName, DayDiff, WeekDay, max(DiscountDiff) as DiscountDiff ' \
             'from cf group by SnapshotDate, CheckinDate, HotelName, DayDiff, WeekDay'
 
     df = pdsql.sqldf(query)
@@ -125,13 +126,14 @@ def sklearn_classifiers():
     :return: None
     :rtype: None
     """
-    data = pd.read_csv('formatted_removed_cols.csv')
+    # data = pd.read_csv('formatted_removed_cols.csv')
+    data = pd.read_csv('formatted_data_ex2.csv')
     for column in data.columns:
         if data[column].dtype == type(object):
             le = preprocessing.LabelEncoder()
             data[column] = le.fit_transform(data[column])
-    x = data[['Snapshot Date', 'Checkin Date', 'DayDiff', 'Hotel Name', 'WeekDay']]
-    y = data['Discount Code']
+    x = data[['SnapshotDate', 'CheckinDate', 'DayDiff', 'HotelName', 'WeekDay']]
+    y = data['DiscountCode']
     nb_classifier(x, y)
     dt_classifier(x, y)
 
@@ -150,10 +152,51 @@ def classify(classifier, x, y):
         classifier.fit(x_train, y_train)
         y_prediction = classifier.predict(x_test)
         y_prediction2 = classifier.predict_proba(x_test)
+        matrix = pd.DataFrame(confusion_matrix(y_test, y_prediction))
+        FP = matrix.sum(axis=0) - np.diag(matrix)
+        FN = matrix.sum(axis=1) - np.diag(matrix)
+        TP = np.diag(matrix)
+        TN = matrix.values.sum() - (FP + FN + TP)
+        TPR = TP/(TP+FN)
+        TNR = TN/(TN+FP)
+        FPR = FP/(FP+TN)
+        FNR = FN/(TP+FN)
         print(str(type(classifier)) + ": Accuracy is " + str(sklearn.metrics.accuracy_score(y_test, y_prediction) * 100) + \
             ", Precision is " + str(sklearn.metrics.precision_score(y_test, y_prediction, average='macro') * 100))
-        skplt.metrics.plot_roc_curve(y_test, y_prediction2)
-        plt.show()
+        print("False Positive:")
+        i = 1
+        for rate in FPR:
+            print("Label", i, "=", rate)
+            i += 1
+        i = 1
+        print("False Negative:")
+        for rate in FNR:
+            print("Label", i, "=", rate)
+            i += 1
+        i = 1
+        print("True Positive:")
+        for rate in TPR:
+            print("Label", i, "=", rate)
+            i += 1
+        i = 1
+        print("True Negative:")
+        for rate in TNR:
+            print("Label", i, "=", rate)
+            i += 1
+        # TPR = TP/(TP+FN)
+        # print("True positive rate:")
+        # print(TPR)
+        # TNR = TN/(TN+FP)
+        # print("True negative rate:")
+        # print(TNR)
+        # FPR = FP/(FP+TN)
+        # print("False positive rate:")
+        # print(FPR)
+        # FNR = FN/(TP+FN)
+        # print("False negative rate:")
+        # print(FNR)
+        # skplt.metrics.plot_roc_curve(y_test, y_prediction2)
+        # plt.show()
     except Exception as e:
         print(e)
 
@@ -189,7 +232,7 @@ def hotelname_to_float(name):
     :rtype: float
     """
     str_name = str(name.encode("utf-8"))
-    return float(int(hashlib.md5(str_name).hexdigest()[:16], 16))
+    return float(int(hashlib.md5(str_name.encode('utf-8')).hexdigest()[:16], 16))
 
 
 def weekday_to_float(weekday):
@@ -212,8 +255,8 @@ def datetime_to_float(dts):
     :rtype: float
     """
     epoch = datetime.utcfromtimestamp(0)
-    dt = datetime.strptime(dts, '%m/%d/%Y')
-    return (dt - epoch).total_seconds()
+    #dt = datetime.strptime(dts, '%m/%d/%Y')
+    return (dts - epoch).total_seconds()
 
 
 def spark_classifiers():
@@ -225,22 +268,26 @@ def spark_classifiers():
     # Start spark session
     spark = SparkSession.builder.master("local").appName("Classifier").getOrCreate()
     # Read CSV file
+    # data = spark.read.format("csv") \
+    #    .option("header", "true") \
+    #    .option("inferSchema", "true") \
+    #    .load("formatted_removed_cols.csv")
     data = spark.read.format("csv") \
         .option("header", "true") \
         .option("inferSchema", "true") \
-        .load("formatted_removed_cols.csv")
+        .load("formatted_data_ex2.csv")
     data.cache()  # Cache data for faster reuse
     udf_hotel_name_to_float = udf(hotelname_to_float, DoubleType())  # User defined function for hashing hotel name
     udf_weekday_to_float = udf(weekday_to_float, DoubleType())  # User defined function for converting weekday to float
     udf_date_to_float = udf(datetime_to_float, DoubleType())  # User defined function for converting date to float
     # Pre-process data
-    data = data.withColumn("DiscountCode", data["Discount Code"]) \
-        .withColumn("SnapshotDate", udf_date_to_float("Snapshot Date")) \
-        .withColumn("CheckinDate", udf_date_to_float("Checkin Date")) \
-        .withColumn("HotelName", udf_hotel_name_to_float("Hotel Name")) \
+    data = data.withColumn("DiscountCode", data["DiscountCode"]) \
+        .withColumn("SnapshotDate", udf_date_to_float("SnapshotDate")) \
+        .withColumn("CheckinDate", udf_date_to_float("CheckinDate")) \
+        .withColumn("HotelName", udf_hotel_name_to_float("HotelName")) \
         .withColumn("WeekDay", udf_weekday_to_float("WeekDay"))
     # Select only relevant columns
-    data = data.select("DiscountCode", "SnapshotDate", "CheckinDate", "Days", "HotelName", "DayDiff", "WeekDay")
+    data = data.select("DiscountCode", "SnapshotDate", "CheckinDate", "HotelName", "DayDiff", "WeekDay")
     # Convert Data-Frame to RDD
     data = data.rdd.map(lambda x: LabeledPoint(x[0], x[1:]))
     # Split data randomly to test and training data
@@ -288,11 +335,12 @@ def spark_nb_classifier(training_data, test_data):
 
 
 
-#sklearn_classifiers()
-# spark_classifiers()
 
 # create hotels_data_changed.csv file (ex1)
 #createHotelsDataChangedFile()
 
+# createHotelsDataChangedFile()
+# createFormattedFileEx2()
 
-createFormattedFileEx2()
+sklearn_classifiers()
+spark_classifiers()
