@@ -17,22 +17,26 @@ def spark_classifiers():
     # Start spark session
     spark = SparkSession.builder.master("local").appName("Classifier").getOrCreate()
     # Read CSV file
+    # data = spark.read.format("csv") \
+    #    .option("header", "true") \
+    #    .option("inferSchema", "true") \
+    #    .load("formatted_removed_cols.csv")
     data = spark.read.format("csv") \
         .option("header", "true") \
         .option("inferSchema", "true") \
-        .load("formatted_removed_cols.csv")
+        .load("formatted_data_ex2.csv")
     data.cache()  # Cache data for faster reuse
     udf_hotel_name_to_float = udf(hotelname_to_float, DoubleType())  # User defined function for hashing hotel name
     udf_weekday_to_float = udf(weekday_to_float, DoubleType())  # User defined function for converting weekday to float
     udf_date_to_float = udf(datetime_to_float, DoubleType())  # User defined function for converting date to float
     # Pre-process data
-    data = data.withColumn("DiscountCode", data["Discount Code"]) \
-        .withColumn("SnapshotDate", udf_date_to_float("Snapshot Date")) \
-        .withColumn("CheckinDate", udf_date_to_float("Checkin Date")) \
-        .withColumn("HotelName", udf_hotel_name_to_float("Hotel Name")) \
+    data = data.withColumn("DiscountCode", data["DiscountCode"]) \
+        .withColumn("SnapshotDate", udf_date_to_float("SnapshotDate")) \
+        .withColumn("CheckinDate", udf_date_to_float("CheckinDate")) \
+        .withColumn("HotelName", udf_hotel_name_to_float("HotelName")) \
         .withColumn("WeekDay", udf_weekday_to_float("WeekDay"))
     # Select only relevant columns
-    data = data.select("DiscountCode", "SnapshotDate", "CheckinDate", "Days", "HotelName", "DayDiff", "WeekDay")
+    data = data.select("DiscountCode", "SnapshotDate", "CheckinDate", "HotelName", "DayDiff", "WeekDay")
     # Convert Data-Frame to RDD
     data = data.rdd.map(lambda x: LabeledPoint(x[0], x[1:]))
     # Split data randomly to test and training data
@@ -89,7 +93,7 @@ def hotelname_to_float(name):
     :rtype: float
     """
     str_name = str(name.encode("utf-8"))
-    return float(int(hashlib.md5(str_name).hexdigest()[:16], 16))
+    return float(int(hashlib.md5(str_name.encode('utf-8')).hexdigest()[:16], 16))
 
 
 def weekday_to_float(weekday):
@@ -112,8 +116,8 @@ def datetime_to_float(dts):
     :rtype: float
     """
     epoch = datetime.utcfromtimestamp(0)
-    dt = datetime.strptime(dts, '%m/%d/%Y')
-    return (dt - epoch).total_seconds()
+    #dt = datetime.strptime(dts, '%m/%d/%Y')
+    return (dts - epoch).total_seconds()
 
 
 if __name__ == "__main__":

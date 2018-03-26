@@ -114,8 +114,6 @@ def main():
 
     discount_code_date_df = normalize_data(discount_code_date_df)
 
-    print(discount_code_date_df)
-
     cluster_hotels_by_price(discount_code_date_df)
 
 
