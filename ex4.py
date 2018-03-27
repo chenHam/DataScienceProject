@@ -116,7 +116,7 @@ def datetime_to_float(dts):
     :rtype: float
     """
     epoch = datetime.utcfromtimestamp(0)
-    #dt = datetime.strptime(dts, '%m/%d/%Y')
+    #dt = datetime.strptime(dts, '%m/%d/%Y')  # needed in python2.7 only
     return (dts - epoch).total_seconds()
 
 

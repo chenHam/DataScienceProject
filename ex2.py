@@ -6,6 +6,9 @@ import scikitplot as skplt
 import matplotlib.pyplot as plt
 from sklearn import preprocessing, model_selection, tree, naive_bayes
 from sklearn.metrics import confusion_matrix
+import warnings
+
+warnings.filterwarnings("ignore")
 
 
 def create_formatted_file_ex2():
@@ -100,37 +103,25 @@ def classify(classifier, x, y):
         print("False Positive:")
         i = 1
         for rate in FPR:
-            print("Label", i, "=", rate)
+            print("Label", i, "=", str(str(rate * 100) + "%"), str("(Total count: " + str(FP[i-1]) + ")"))
             i += 1
         i = 1
         print("False Negative:")
         for rate in FNR:
-            print("Label", i, "=", rate)
+            print("Label", i, "=", str(str(rate * 100) + "%"), str("(Total count: " + str(FN[i-1]) + ")"))
             i += 1
         i = 1
         print("True Positive:")
         for rate in TPR:
-            print("Label", i, "=", rate)
+            print("Label", i, "=", str(str(rate * 100) + "%"), str("(Total count: " + str(TP[i-1]) + ")"))
             i += 1
         i = 1
         print("True Negative:")
         for rate in TNR:
-            print("Label", i, "=", rate)
+            print("Label", i, "=", str(str(rate * 100) + "%"), str("(Total count: " + str(TN[i-1]) + ")"))
             i += 1
-        # TPR = TP/(TP+FN)
-        # print("True positive rate:")
-        # print(TPR)
-        # TNR = TN/(TN+FP)
-        # print("True negative rate:")
-        # print(TNR)
-        # FPR = FP/(FP+TN)
-        # print("False positive rate:")
-        # print(FPR)
-        # FNR = FN/(TP+FN)
-        # print("False negative rate:")
-        # print(FNR)
-        # skplt.metrics.plot_roc_curve(y_test, y_prediction2)
-        # plt.show()
+        skplt.metrics.plot_roc_curve(y_test, y_prediction2)
+        plt.show()
     except Exception as e:
         print(e)
 
